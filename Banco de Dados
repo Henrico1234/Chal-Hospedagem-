@@ -1,0 +1,31 @@
+CREATE TABLE Cliente (
+    codCliente SERIAL PRIMARY KEY,
+    nomeCliente VARCHAR(100),
+    rgCliente VARCHAR(20),
+    enderecoCliente VARCHAR(200),
+    bairroCliente VARCHAR(100),
+    cidadeCliente VARCHAR(100),
+    estadoCliente VARCHAR(2),
+    cepCliente VARCHAR(10),
+    nascimentoCliente DATE
+);
+
+CREATE TABLE Chale (
+    codChale SERIAL PRIMARY KEY,
+    localizacao VARCHAR(100),
+    capacidade INT,
+    valorAltaEstacao DECIMAL(10, 2),
+    valorBaixaEstacao DECIMAL(10, 2)
+);
+
+CREATE TABLE Hospedagem (
+    codHospedagem SERIAL PRIMARY KEY,
+    codChale INT REFERENCES Chale(codChale),
+    codCliente INT REFERENCES Cliente(codCliente),
+    estado VARCHAR(50),
+    dataInicio DATE,
+    dataFim DATE,
+    qtdPessoas INT,
+    desconto DECIMAL(10, 2),
+    valorFinal DECIMAL(10, 2)
+);
