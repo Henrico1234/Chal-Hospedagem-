@@ -66,6 +66,7 @@ public class ChaleForm {
                 chaleDAO.inserirChale(chale);
 
                 JOptionPane.showMessageDialog(frame, "Chalé salvo com sucesso!");
+                frame.dispose();
             }
         });
         frame.add(saveButton);
