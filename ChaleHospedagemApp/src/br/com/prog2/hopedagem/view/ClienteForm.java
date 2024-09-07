@@ -127,6 +127,7 @@ public class ClienteForm {
                 clienteDAO.inserirCliente(cliente);
 
                 JOptionPane.showMessageDialog(frame, "Cliente salvo com sucesso!");
+                frame.dispose();
             }
         });
         frame.add(saveButton);
