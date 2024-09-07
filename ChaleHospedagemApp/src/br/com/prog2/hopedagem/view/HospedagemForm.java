@@ -47,6 +47,12 @@ public class HospedagemForm {
                     int qtdPessoas = Integer.parseInt(qtdPessoasField.getText());
                     double desconto = Double.parseDouble(descontoField.getText());
 
+                     // Verificar se o desconto esta > que 100%
+                    if (desconto > 100) {
+                        JOptionPane.showMessageDialog(frame, "Limite de 100% de desconto!", "Erro", JOptionPane.ERROR_MESSAGE);
+                        return;
+                    }
+
                     //Verificar disponibilidade do chalé
                     ChaleDAO chaleDAO = new ChaleDAO();
                     boolean chaleDisponivel = chaleDAO.isChaleDisponível(codChale, dataInicio, dataFim);
