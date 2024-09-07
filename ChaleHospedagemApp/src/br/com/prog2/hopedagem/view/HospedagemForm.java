@@ -77,7 +77,7 @@ public class HospedagemForm {
                             JOptionPane.YES_NO_OPTION);
 
                     if (resposta == JOptionPane.YES_OPTION) {
-                        //Inserir a hospedagem no banco de dados
+                       
                         Hospedagem hospedagem = new Hospedagem();
                         hospedagem.setCodChale(codChale);
                         hospedagem.setCodCliente(codCliente);
@@ -92,7 +92,7 @@ public class HospedagemForm {
                         hospedagemDAO.inserirHospedagem(hospedagem);
 
                         JOptionPane.showMessageDialog(frame, "Hospedagem confirmada com sucesso!");
-                        frame.dispose(); // Fechar o formulário
+                        frame.dispose(); 
                     }
                 } catch (ParseException ex) {
                     JOptionPane.showMessageDialog(frame, "Data inválida.");
